@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="head-container">
+        <h1>Rock<br>Paper<br>Scissors</h1>
+
+        <!-- Wins Counter -->
+        <div id="wins-counter">
+            <h4>Your Score <br><br><span id="total-user-wins">0</span></h4>
+            <h4>Computer Score<br><br> <span id="total-computer-wins">0</span></h4>
+        </div>
+
+    </div>
+    
+    <!-- Initial Triangle UI -->
+    <div id="game-container" class="triangle">
+      <svg width="300" height="300" class="triangle-lines">
+        <line x1="150" y1="30" x2="30" y2="270" stroke="#333" stroke-width="9"></line>
+        <line x1="150" y1="30" x2="270" y2="270" stroke="#333" stroke-width="9"></line>
+        <line x1="30" y1="270" x2="270" y2="270" stroke="#333" stroke-width="9"></line>
+      </svg>
+      <div class="node rock" onclick="playGame('rock')">✊</div>
+      <div class="node paper" onclick="playGame('paper')">✋</div>
+      <div class="node scissors" onclick="playGame('scissors')">✌️</div>
+    </div>
+
+    <!-- Result UI -->
+    <div id="result-container" class="result" style="display: none;">
+      <div class="choices">
+        <div id="user-symbol" class="symbol"></div>
+        <h2 id="winner-name"></h2>
+        <div id="computer-symbol" class="symbol"></div>
+      </div>
+      <div id="score-board">
+        <h3>User Wins: <span id="user-score">0</span></h3>
+        <h3>Computer Wins: <span id="computer-score">0</span></h3>
+        <h3>Games Played: <span id="games-played">0</span>/15</h3>
+      </div>
+      <button id="play-again" onclick="playAgain()" style="display: none;">Play Again</button>
+    </div>
+
+    <!-- Final Result UI -->
+    <div id="final-result-container" style="display: none;">
+      <h2 id="final-winner"></h2>
+      <div id="trophy-icon" class="trophy-icon" style="display: none;">🏆</div>
+      <button onclick="restartGame()">Restart Game</button>
+    </div>
+  </div>
+  <div class="container1">
+    <button id="show-names-btn">Rules</button>
+    <div id="name-box" class="hidden">
+      <span id="close-btn">×</span>
+      <ul id="name-list">
+        <h2>Game Rules</h2>
+        <li><span style="color: yellow;">▪</span> Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+        <li><span style="color: yellow;">▪</span> Agree Ahead of time whether you'll count off "rock, paper, scissors, shoot" or just "rock, paper, scissors"</li>
+        <li><span style="color: yellow;">▪</span> Use rock, paper, scissors to settle minor descisions or simply play to pass the time.</li>
+        <li><span style="color: yellow;">▪</span> If both players lay down the same hand, each player lays down another hand.</li>
+        
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

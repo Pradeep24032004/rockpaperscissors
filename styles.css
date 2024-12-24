@@ -1,0 +1,269 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #51f096;
+    margin: 0;
+    padding: 0;
+  }
+  .head-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #51f096;
+    border: 2px solid #ffffff; /* Solid border for the container */
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin: 20px auto;
+    width: 80%; 
+    height:100px;/* Adjust the width as needed */
+  }
+  
+  .head-container h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0;
+    left:0px; /* Remove default margin */
+  }
+  
+  #wins-counter {
+    display: flex;
+    gap: 20px;
+    height:100px;
+    bottom: 0px; /* Space between the counters */
+  }
+  
+  #wins-counter h4 {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    border: 1px solid #ffffff;
+    font-size: 1.2rem;
+    margin: 0; /* Remove default margin */
+  }
+  
+  #wins-counter h4 span {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #333;
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  h1, h2, h3 {
+    color: white;
+  }
+  #play-again{
+    
+    position: absolute;
+    left:700px;
+  }
+  #wins-counter {
+    margin-bottom: 20px;
+  }
+  
+  .triangle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    
+    margin: 50px auto;
+  }
+  
+  .triangle-lines {
+    position: absolute;
+    top: 50;
+    left: 0;
+    
+    z-index: -1;
+  }
+  
+  .node {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #f9f9f9;
+    
+    border-radius: 50%;
+    line-height: 80px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  .node:hover {
+    transform: scale(1.2);
+    background-color: #e0f7fa;
+  }
+  
+  .rock {
+    top: 25px;
+    left: 105px;
+    border: 9px solid #1172d2;
+  }
+  
+  .paper {
+    bottom: 15px;
+    left: 10px;
+    border: 9px solid #db640a;
+  }
+  
+  .scissors {
+    bottom: 15px;
+    right: 10px;
+    border: 9px solid #9a0fe6;
+  }
+  
+  .result, #score-board {
+    margin-top: 30px;
+  }
+  
+  .choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .symbol {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+    line-height: 100px;
+    border: 8px solid #333;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .winner {
+    background-color: #d4edda;
+    box-shadow: 
+      0 0 20px rgba(0, 255, 0, 0.8),
+      0 0 30px rgba(0, 255, 0, 0.7),
+      0 0 50px rgba(0, 255, 0, 0.6),
+      0 0 60px rgba(0, 255, 0, 0.5),
+      0 0 70px rgba(0, 255, 0, 0.4), /* Closest, vibrant green */
+      0 0 80px rgba(0, 255, 0, 0.3), /* Middle layer, slightly dimmer */
+      0 0 90px rgba(0, 255, 0, 0.2); /* Outermost, soft glow */
+  }
+  
+  .loser {
+    background-color: #f8d7da;
+    box-shadow: none; /* No additional effects for the loser */
+  }
+  
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    color:#51f096;
+    background-color: white;
+    margin-top: 20px;
+    border: 3px solid white;
+    border-radius: 5px;
+  }
+  
+  /* Trophy Icon Styling */
+  .trophy-icon {
+    font-size: 12rem;
+    margin-top: 20px;
+    animation: trophyAnimation 1.5s infinite alternate;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  .container1 {
+    display: flex;
+    position: absolute;
+    right: 100px;
+    bottom:60px;
+    justify-content: right;
+    align-items: flex-start; /* Make sure button is aligned at the top */
+  }
+  
+  #show-names-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    color:white;
+    background-color:#51f096;
+    margin-top: 20px;
+    border: 3px solid white;
+    border-radius: 5px;
+  }
+  
+  #show-names-btn:hover {
+    background-color: #45a049;
+  }
+  
+  #name-box {
+    margin-top: 20px;
+    position: absolute; /* Position the name box separately */
+    display: inline-block;
+    padding: 20px;
+    background: #fff;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    left: -150px;
+    bottom:60px;
+    width: 400px;
+    background-color: #45a049;
+    max-width: 250px; /* Set max-width to limit box size */
+    height: auto;
+  }
+  
+  #name-box.hidden {
+    display: none;
+  }
+  
+  #close-btn {
+    position: absolute;
+    top: -20px;
+    right:-15px;
+    height:20px;
+    width:20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 60px;
+    background-color: red;
+    border:2px solid white;
+    color:white;
+  }
+  
+  #close-btn:hover {
+    color:white;
+  }
+  
+  #name-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #name-list li {
+    margin: 5px 0;
+    color:white;
+  }
+  
+
+  
+  @keyframes trophyAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+  
